@@ -1,0 +1,7 @@
+-- get the anniversary year for the current year (year worked)
+(YEAR(GETDATE())-YEAR(Employee.SeniorityDate))
+
+_________________________
+
+-- get the anniversary date for the current year
+DATEADD(YEAR,(YEAR(GETDATE())-YEAR(Employee.SeniorityDate)),Employee.SeniorityDate)

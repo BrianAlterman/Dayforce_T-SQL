@@ -5,3 +5,21 @@ _________________________
 
 -- get the anniversary date for the current year
 DATEADD(YEAR,(YEAR(GETDATE())-YEAR(Employee.SeniorityDate)),Employee.SeniorityDate)
+
+_________________________
+
+-- get the next anniversary date for the employee. If the date has already passed this year it will provide next years date
+CASE
+when DATEADD(YEAR,(YEAR(GETDATE())-YEAR(Employee.SeniorityDate)),Employee.SeniorityDate) > getdate()
+then DATEADD(YEAR,(YEAR(GETDATE())-YEAR(Employee.SeniorityDate)),Employee.SeniorityDate)
+else DATEADD(YEAR,(YEAR(GETDATE())+1-YEAR(Employee.SeniorityDate)),Employee.SeniorityDate)
+End
+
+_________________________
+
+-- get the next anniversary year for the employee. If the date has already passed this year it will provide next years anniversary
+case
+when DATEADD(YEAR,(YEAR(GETDATE())-YEAR(Employee.SeniorityDate)),Employee.SeniorityDate) > getdate()
+then (YEAR(GETDATE())-YEAR(Employee.SeniorityDate))
+else (YEAR(GETDATE())-YEAR(Employee.SeniorityDate)) + 1
+end

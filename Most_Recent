@@ -1,0 +1,2 @@
+-- Selects the most recent posting date for a requisition for each requistion ID
+(Select top 1 JobPosting.EffectiveStart from JobPosting where JobPosting.JobReqId = JobReq.JobReqId order by JobPosting.EffectiveStart desc)

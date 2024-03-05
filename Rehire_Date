@@ -1,0 +1,7 @@
+-- The hire date is the most recent hire date while the original hire date is the first hire date.
+-- Derives the rehire date via case statement
+
+Case
+When Employee.HireDate != Employee.OriginalHireDate then Employee.HireDate
+else null
+end

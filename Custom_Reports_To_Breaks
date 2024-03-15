@@ -1,1 +1,7 @@
--
+-- Pull the first part of a field
+
+SUBSTRING(DenormEmployeeProperty1.Field40,1,7)
+
+-- Cut off first part of a string
+
+RIGHT(RTRIM(DenormEmployeeProperty1.Field41), LEN(DenormEmployeeProperty1.Field41) - 8)

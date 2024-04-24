@@ -1,0 +1,5 @@
+Max (Grouping)
+case when exists (select em.* from employeemanager em where em.managerid = max(Employee.EmployeeId) and getdate() between em.effectivestart and coalesce (em.effectiveend, '2050-12-31')) then 'True' else 'False' end
+
+No Max (No Grouping)
+case when exists (select em.* from employeemanager em where em.managerid = Employee.EmployeeId and getdate() between em.effectivestart and coalesce (em.effectiveend, '2050-12-31')) then 'True' else 'False' end

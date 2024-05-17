@@ -1,0 +1,39 @@
+CASE
+        WHEN @AsOfDate - (case
+ when Employee.SeniorityDate <= @AsOfDate then Employee.SeniorityDate
+ when Employee.SeniorityDate > @AsOfDate and Employee.HireDate > @AsOfDate then employee.originalHireDate
+ else Employee.HireDate
+end) < 92 THEN
+            'A - 0 to 3 Months'
+        WHEN @AsOfDate - (case
+ when Employee.SeniorityDate <= @AsOfDate then Employee.SeniorityDate
+ when Employee.SeniorityDate > @AsOfDate and Employee.HireDate > @AsOfDate then employee.originalHireDate
+ else Employee.HireDate
+end) > 92
+             AND @AsOfDate - (case
+ when Employee.SeniorityDate <= @AsOfDate then Employee.SeniorityDate
+ when Employee.SeniorityDate > @AsOfDate and Employee.HireDate > @AsOfDate then employee.originalHireDate
+ else Employee.HireDate
+end) < 183 THEN
+            'B - 3 to 6 Months'
+        WHEN @AsOfDate - (case
+ when Employee.SeniorityDate <= @AsOfDate then Employee.SeniorityDate
+ when Employee.SeniorityDate > @AsOfDate and Employee.HireDate > @AsOfDate then employee.originalHireDate
+ else Employee.HireDate
+end) > 183
+             AND @AsOfDate - (case
+ when Employee.SeniorityDate <= @AsOfDate then Employee.SeniorityDate
+ when Employee.SeniorityDate > @AsOfDate and Employee.HireDate > @AsOfDate then employee.originalHireDate
+ else Employee.HireDate
+end) < 274 THEN
+            'C - 6 to 9 Months'
+        WHEN @AsOfDate - (case
+ when Employee.SeniorityDate <= @AsOfDate then Employee.SeniorityDate
+ when Employee.SeniorityDate > @AsOfDate and Employee.HireDate > @AsOfDate then employee.originalHireDate
+ else Employee.HireDate
+end) > 274
+             AND @AsOfDate - (case
+ when Employee.SeniorityDate <= @AsOfDate then Employee.SeniorityDate
+ when Employee.SeniorityDate > @AsOfDate and Employee.HireDate > @AsOfDate then employee.originalHireDate
+ else Employee.HireDate
+end) < 365 then 'D - 9 to 12 Months' else 'E - Greater than 12 Months' end

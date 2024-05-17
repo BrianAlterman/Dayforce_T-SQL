@@ -1,0 +1,10 @@
+CASE
+ WHEN @AsOfDate - Employee.SeniorityDate < 366      THEN
+   'A - Less than 1 year'
+ WHEN @AsOfDate - Employee.SeniorityDate > 365
+   and @AsOfDate - Employee.SeniorityDate < 1826 THEN
+   'B - 1 to 5 years'
+ WHEN @AsOfDate - Employee.SeniorityDate > 1825 THEN
+   'C - Greater than 5 years'
+ ELSE 'ERROR'
+END

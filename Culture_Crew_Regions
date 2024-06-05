@@ -51,3 +51,610 @@ When PersonAddress.StateCode = 'ON' then 'Region H'
 When PersonAddress.StateCode = 'NB' then 'Region H'
 else 'unknown'
 end
+
+----------------------------------------------------
+-- Modified on 6/5/2024 to reflect the work state for physical addresses and the home state for virtual employees
+
+Case
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'WA' then 'Region A'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'WY' then 'Region A'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'MT' then 'Region A'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'OR' then 'Region A'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'ID' then 'Region A'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'CA' then 'Region A'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'AZ' then 'Region A'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'UT' then 'Region A'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'NV' then 'Region A'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'OK' then 'Region B'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'NM' then 'Region B'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'CO' then 'Region B'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'KS' then 'Region B'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'TX' then 'Region B'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'NE' then 'Region C'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'MI' then 'Region C'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'WI' then 'Region C'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'MN' then 'Region C'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'SD' then 'Region C'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'IA' then 'Region C'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'MO' then 'Region D'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'IN' then 'Region D'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'IL' then 'Region D'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'TN' then 'Region D'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'KY' then 'Region D'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'AR' then 'Region D'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'AL' then 'Region E'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'MS' then 'Region E'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'LA' then 'Region E'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'FL' then 'Region E'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'GA' then 'Region E'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'NJ' then 'Region F'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'MA' then 'Region F'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'NH' then 'Region F'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'CT' then 'Region F'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'ME' then 'Region F'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'RI' then 'Region F'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'VT' then 'Region F'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'MD' then 'Region G'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'DE' then 'Region G'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'DC' then 'Region G'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'NC' then 'Region G'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'SC' then 'Region G'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'NY' then 'Region H'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'PA' then 'Region H'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'OH' then 'Region H'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'WV' then 'Region H'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'VA' then 'Region H'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END) = 'ON' then 'Region H'
+When (CASE
+    WHEN LEFT(OrgUnit.XRefCode, 1) = 'V' THEN 
+        CASE 
+            WHEN LEN(DenormEmployeeContact.PrimaryAddressStateShortName ) > 0 THEN PersonAddress.StateCode
+    ELSE '' 
+        END
+ Else
+CASE 
+            WHEN LEN(OrgUnitCopy1.StateCode) > 0 THEN  OrgUnitCopy1.StateCode 
+            ELSE '' 
+        END
+END)  = 'NB' then 'Region H'
+else 'unknown'
+end

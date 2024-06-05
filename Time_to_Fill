@@ -1,0 +1,4 @@
+CASE 
+WHEN ReqStatus.ShortName='Filled' THEN DATEDIFF(day, JobReq.RequestDate, JobReqStatus.EffectiveStart) 
+ELSE NULL 
+END

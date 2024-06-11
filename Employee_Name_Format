@@ -1,0 +1,4 @@
+Case
+when Employee.MiddleName is null then CONCAT(Employee.FirstName,' ', Employee.LastName)
+else CONCAT(Employee.FirstName,' ', Employee.MiddleName,' ', Employee.LastName)
+end

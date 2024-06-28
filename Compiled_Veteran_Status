@@ -1,0 +1,31 @@
+CASE
+    WHEN DFVeteransStatus.ShortName = 'Active Duty Wartime Or Campaign Badge Veteran' THEN
+        'VETERAN'
+    WHEN DFVeteransStatus.ShortName = 'Armed Forces Service Medal Veteran' THEN
+        'VETERAN'
+    WHEN DFVeteransStatus.ShortName = 'Disabled Veteran' THEN
+        'VETERAN'
+    WHEN DFVeteransStatus.ShortName = 'I am a protected veteran, but I choose not to self-identify the classifications to which I belong'
+    THEN
+        'VETERAN'
+    WHEN DFVeteransStatus.ShortName = 'I am NOT a protected veteran' THEN
+        'VETERAN'
+    WHEN DFVeteransStatus.ShortName = 'Recently Separated Veteran' THEN
+        'VETERAN'
+else (case
+when DenormEmployeeProperty1.Field48 = 'YES' then 'VETERAN' else(
+    CASE
+        WHEN denormemployeeproperty1.field39 = 'Active Guard/Reserve'   THEN
+            'VETERAN'
+        WHEN denormemployeeproperty1.field39 = 'Veteran'                THEN
+            'VETERAN'
+        WHEN denormemployeeproperty1.field39 = 'Active Military Spouse' THEN
+            'SPOUSE'
+        WHEN denormemployeeproperty1.field39 = 'Veteran Spouse'         THEN
+            'SPOUSE'
+        ELSE
+            'NOT AFFILIATED'
+    END
+) 
+
+end) end

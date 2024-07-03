@@ -1,31 +1,37 @@
-CASE
-    WHEN DFVeteransStatus.ShortName = 'Active Duty Wartime Or Campaign Badge Veteran' THEN
-        'VETERAN'
-    WHEN DFVeteransStatus.ShortName = 'Armed Forces Service Medal Veteran' THEN
-        'VETERAN'
-    WHEN DFVeteransStatus.ShortName = 'Disabled Veteran' THEN
-        'VETERAN'
-    WHEN DFVeteransStatus.ShortName = 'I am a protected veteran, but I choose not to self-identify the classifications to which I belong'
-    THEN
-        'VETERAN'
-    WHEN DFVeteransStatus.ShortName = 'I am NOT a protected veteran' THEN
-        'VETERAN'
-    WHEN DFVeteransStatus.ShortName = 'Recently Separated Veteran' THEN
-        'VETERAN'
-else (case
-when DenormEmployeeProperty1.Field48 = 'YES' then 'VETERAN' else(
+--For disabled veteran flag and self-id military status need to use the code behind the display value for correct results    
     CASE
-        WHEN denormemployeeproperty1.field39 = 'Active Guard/Reserve'   THEN
+        WHEN CASE
+            WHEN dfveteransstatus.shortname = 'Active Duty Wartime Or Campaign Badge Veteran'                                                     THEN
+                'VETERAN'
+            WHEN dfveteransstatus.shortname = 'Armed Forces Service Medal Veteran'                                                                THEN
+                'VETERAN'
+            WHEN dfveteransstatus.shortname = 'Disabled Veteran'                                                                                  THEN
+                'VETERAN'
+            WHEN dfveteransstatus.shortname = 'I am a protected veteran, but I choose not to self-identify the classifications to which I belong' THEN
+                'VETERAN'
+            WHEN dfveteransstatus.shortname = 'I am NOT a protected veteran'                                                                      THEN
+                'VETERAN'
+            WHEN dfveteransstatus.shortname = 'Recently Separated Veteran'                                                                        THEN
+                'VETERAN'
+            ELSE
+                'NOT AFFILIATED'
+             END = 'VETERAN'                         THEN
             'VETERAN'
-        WHEN denormemployeeproperty1.field39 = 'Veteran'                THEN
+        WHEN CASE
+                 WHEN denormemployeeproperty1.field48xrefcode = 'YES_VET' THEN
+                     'VETERAN'
+                 ELSE
+                     'NOT AFFILIATED'
+             END = 'VETERAN'                         THEN
             'VETERAN'
-        WHEN denormemployeeproperty1.field39 = 'Active Military Spouse' THEN
+        WHEN denormemployeeproperty1.field39 = '269' THEN
+            'VETERAN'
+        WHEN denormemployeeproperty1.field39 = '273' THEN
+            'VETERAN'
+        WHEN denormemployeeproperty1.field39 = '270' THEN
             'SPOUSE'
-        WHEN denormemployeeproperty1.field39 = 'Veteran Spouse'         THEN
+        WHEN denormemployeeproperty1.field39 = '274' THEN
             'SPOUSE'
         ELSE
             'NOT AFFILIATED'
-    END
-) 
-
-end) end
+END

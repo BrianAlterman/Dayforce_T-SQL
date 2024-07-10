@@ -1,0 +1,11 @@
+case
+when DFEthnicity.LongName = 'American Indian or Alaska Native (not Hispanic or Latino)' then 'American Indian or Alaska Native'
+when DFEthnicity.LongName = 'Asian (not Hispanic or Latino)' then 'Asian'
+when DFEthnicity.LongName = 'Black or African American (not Hispanic or Latino)' then 'Black or African American'
+when DFEthnicity.LongName = 'Hispanic or Latino' then 'Hispanic or Latino'
+when DFEthnicity.LongName = 'Native Hawaiian or Other Pacific Islander (not Hispanic or Latino)' then 'Native Hawaiian or Other Pacific Islander'
+when DFEthnicity.LongName = 'Two or More Races  (not Hispanic or Latino)' then 'Two or More Races'
+when DFEthnicity.LongName = 'White (not Hispanic or Latino)' then 'White'
+when DFEthnicity.LongName = 'Eurasian' then 'White'
+else 'Unknown/Declined to Answer'
+End

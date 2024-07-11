@@ -1,0 +1,5 @@
+case
+when DenormEmployeeProperty1.Field48XRefCode = 'YES_VET' then 'Disabled'
+when Employee.RegisteredDisabled = 'Yes' then 'Disabled'
+else 'Not Disabled'
+End

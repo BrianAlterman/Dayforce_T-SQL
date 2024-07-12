@@ -1,0 +1,11 @@
+CASE
+        WHEN datediff(day, cast(Employee.SeniorityDate as datetime), cast('7/12/2024' as datetime)) < 366      THEN
+            'A - Less than 1 year'
+        WHEN datediff(day, cast(Employee.SeniorityDate as datetime), cast('7/12/2024' as datetime)) > 365
+             AND datediff(day, cast(Employee.SeniorityDate as datetime), cast('7/12/2024' as datetime)) < 1826 THEN
+            'B - 1 to 5 years'
+        WHEN datediff(day, cast(Employee.SeniorityDate as datetime), cast('7/12/2024' as datetime)) > 1825     THEN
+            'C - Greater than 5 years'
+        ELSE
+            'ERROR'
+    END

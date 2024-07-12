@@ -1,0 +1,15 @@
+CASE
+       WHEN datediff(day, cast(Employee.SeniorityDate as datetime), cast('7/12/2024' as datetime)) < 92 THEN
+            'A - 0 to 3 Months'
+       WHEN datediff(day, cast(Employee.SeniorityDate as datetime), cast('7/12/2024' as datetime)) > 92
+             AND datediff(day, cast(Employee.SeniorityDate as datetime), cast('7/12/2024' as datetime)) < 183 THEN
+            'B - 3 to 6 Months'
+       WHEN datediff(day, cast(Employee.SeniorityDate as datetime), cast('7/12/2024' as datetime)) > 183
+             AND datediff(day, cast(Employee.SeniorityDate as datetime), cast('7/12/2024' as datetime)) < 274 THEN
+            'C - 6 to 9 Months'
+       WHEN datediff(day, cast(Employee.SeniorityDate as datetime), cast('7/12/2024' as datetime)) > 274
+             AND datediff(day, cast(Employee.SeniorityDate as datetime), cast('7/12/2024' as datetime)) < 365 THEN
+            'C - 9 to 12 Months'
+       ELSE
+            'D - Greater than 12 Months'
+END 

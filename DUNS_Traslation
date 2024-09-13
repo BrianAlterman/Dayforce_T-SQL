@@ -1,0 +1,108 @@
+case
+        when (SELECT TOP 1 le.ShortName FROM
+LegalEntity le
+JOIN OrgUnitLegalEntity oule ON le.LegalEntityId=oule.LegalEntityId
+AND @AsofDate BETWEEN oule.EffectiveStart AND COALESCE(oule.EffectiveEnd,'01-01-2050')
+JOIN OrgUnitParent oup ON oup.ParentOrgUnitId=oule.OrgUnitId
+AND @AsofDate BETWEEN oup.EffectiveStart AND COALESCE(oup.EffectiveEnd,'01-01-2050')
+AND oup.OrgUnitId=EmployeeWorkAssignment.OrgUnitId) = 'Broadview Networks, Inc' then '877388041'
+        when (SELECT TOP 1 le.ShortName FROM
+LegalEntity le
+JOIN OrgUnitLegalEntity oule ON le.LegalEntityId=oule.LegalEntityId
+AND @AsofDate BETWEEN oule.EffectiveStart AND COALESCE(oule.EffectiveEnd,'01-01-2050')
+JOIN OrgUnitParent oup ON oup.ParentOrgUnitId=oule.OrgUnitId
+AND @AsofDate BETWEEN oup.EffectiveStart AND COALESCE(oup.EffectiveEnd,'01-01-2050')
+AND oup.OrgUnitId=EmployeeWorkAssignment.OrgUnitId) like 'D%E Communications, LLC' then '95-696-4365' -- Like due to & generating a variable
+        when (SELECT TOP 1 le.ShortName FROM
+LegalEntity le
+JOIN OrgUnitLegalEntity oule ON le.LegalEntityId=oule.LegalEntityId
+AND @AsofDate BETWEEN oule.EffectiveStart AND COALESCE(oule.EffectiveEnd,'01-01-2050')
+JOIN OrgUnitParent oup ON oup.ParentOrgUnitId=oule.OrgUnitId
+AND @AsofDate BETWEEN oup.EffectiveStart AND COALESCE(oup.EffectiveEnd,'01-01-2050')
+AND oup.OrgUnitId=EmployeeWorkAssignment.OrgUnitId) = 'Valor Communications of TX LLC' then '790955327'
+        when (SELECT TOP 1 le.ShortName FROM
+LegalEntity le
+JOIN OrgUnitLegalEntity oule ON le.LegalEntityId=oule.LegalEntityId
+AND @AsofDate BETWEEN oule.EffectiveStart AND COALESCE(oule.EffectiveEnd,'01-01-2050')
+JOIN OrgUnitParent oup ON oup.ParentOrgUnitId=oule.OrgUnitId
+AND @AsofDate BETWEEN oup.EffectiveStart AND COALESCE(oup.EffectiveEnd,'01-01-2050')
+AND oup.OrgUnitId=EmployeeWorkAssignment.OrgUnitId) = 'Windstream Comm Kerrville, LLC' then '790955533'
+        when (SELECT TOP 1 le.ShortName FROM
+LegalEntity le
+JOIN OrgUnitLegalEntity oule ON le.LegalEntityId=oule.LegalEntityId
+AND @AsofDate BETWEEN oule.EffectiveStart AND COALESCE(oule.EffectiveEnd,'01-01-2050')
+JOIN OrgUnitParent oup ON oup.ParentOrgUnitId=oule.OrgUnitId
+AND @AsofDate BETWEEN oup.EffectiveStart AND COALESCE(oup.EffectiveEnd,'01-01-2050')
+AND oup.OrgUnitId=EmployeeWorkAssignment.OrgUnitId) = 'Windstream Florida, LLC' then '791271443'
+        when (SELECT TOP 1 le.ShortName FROM
+LegalEntity le
+JOIN OrgUnitLegalEntity oule ON le.LegalEntityId=oule.LegalEntityId
+AND @AsofDate BETWEEN oule.EffectiveStart AND COALESCE(oule.EffectiveEnd,'01-01-2050')
+JOIN OrgUnitParent oup ON oup.ParentOrgUnitId=oule.OrgUnitId
+AND @AsofDate BETWEEN oup.EffectiveStart AND COALESCE(oup.EffectiveEnd,'01-01-2050')
+AND oup.OrgUnitId=EmployeeWorkAssignment.OrgUnitId) = 'Windstream Iowa Comm, LLC' then '109189071'
+        when (SELECT TOP 1 le.ShortName FROM
+LegalEntity le
+JOIN OrgUnitLegalEntity oule ON le.LegalEntityId=oule.LegalEntityId
+AND @AsofDate BETWEEN oule.EffectiveStart AND COALESCE(oule.EffectiveEnd,'01-01-2050')
+JOIN OrgUnitParent oup ON oup.ParentOrgUnitId=oule.OrgUnitId
+AND @AsofDate BETWEEN oup.EffectiveStart AND COALESCE(oup.EffectiveEnd,'01-01-2050')
+AND oup.OrgUnitId=EmployeeWorkAssignment.OrgUnitId) = 'Windstream Kentucky East, LLC' then '137509969'
+        when (SELECT TOP 1 le.ShortName FROM
+LegalEntity le
+JOIN OrgUnitLegalEntity oule ON le.LegalEntityId=oule.LegalEntityId
+AND @AsofDate BETWEEN oule.EffectiveStart AND COALESCE(oule.EffectiveEnd,'01-01-2050')
+JOIN OrgUnitParent oup ON oup.ParentOrgUnitId=oule.OrgUnitId
+AND @AsofDate BETWEEN oup.EffectiveStart AND COALESCE(oup.EffectiveEnd,'01-01-2050')
+AND oup.OrgUnitId=EmployeeWorkAssignment.OrgUnitId) = 'Windstream Mississippi, LLC' then '187533484'
+        when (SELECT TOP 1 le.ShortName FROM
+LegalEntity le
+JOIN OrgUnitLegalEntity oule ON le.LegalEntityId=oule.LegalEntityId
+AND @AsofDate BETWEEN oule.EffectiveStart AND COALESCE(oule.EffectiveEnd,'01-01-2050')
+JOIN OrgUnitParent oup ON oup.ParentOrgUnitId=oule.OrgUnitId
+AND @AsofDate BETWEEN oup.EffectiveStart AND COALESCE(oup.EffectiveEnd,'01-01-2050')
+AND oup.OrgUnitId=EmployeeWorkAssignment.OrgUnitId) = 'Windstream Nebraska, Inc.' then '111944919'
+        when (SELECT TOP 1 le.ShortName FROM
+LegalEntity le
+JOIN OrgUnitLegalEntity oule ON le.LegalEntityId=oule.LegalEntityId
+AND @AsofDate BETWEEN oule.EffectiveStart AND COALESCE(oule.EffectiveEnd,'01-01-2050')
+JOIN OrgUnitParent oup ON oup.ParentOrgUnitId=oule.OrgUnitId
+AND @AsofDate BETWEEN oup.EffectiveStart AND COALESCE(oup.EffectiveEnd,'01-01-2050')
+AND oup.OrgUnitId=EmployeeWorkAssignment.OrgUnitId) = 'Windstream New York, Inc.' then '009859059'
+        when (SELECT TOP 1 le.ShortName FROM
+LegalEntity le
+JOIN OrgUnitLegalEntity oule ON le.LegalEntityId=oule.LegalEntityId
+AND @AsofDate BETWEEN oule.EffectiveStart AND COALESCE(oule.EffectiveEnd,'01-01-2050')
+JOIN OrgUnitParent oup ON oup.ParentOrgUnitId=oule.OrgUnitId
+AND @AsofDate BETWEEN oup.EffectiveStart AND COALESCE(oup.EffectiveEnd,'01-01-2050')
+AND oup.OrgUnitId=EmployeeWorkAssignment.OrgUnitId) = 'Windstream North Carolina, LLC' then '790955616'
+        when (SELECT TOP 1 le.ShortName FROM
+LegalEntity le
+JOIN OrgUnitLegalEntity oule ON le.LegalEntityId=oule.LegalEntityId
+AND @AsofDate BETWEEN oule.EffectiveStart AND COALESCE(oule.EffectiveEnd,'01-01-2050')
+JOIN OrgUnitParent oup ON oup.ParentOrgUnitId=oule.OrgUnitId
+AND @AsofDate BETWEEN oup.EffectiveStart AND COALESCE(oup.EffectiveEnd,'01-01-2050')
+AND oup.OrgUnitId=EmployeeWorkAssignment.OrgUnitId) = 'Windstream Ohio, LLC' then '007902778'
+        when (SELECT TOP 1 le.ShortName FROM
+LegalEntity le
+JOIN OrgUnitLegalEntity oule ON le.LegalEntityId=oule.LegalEntityId
+AND @AsofDate BETWEEN oule.EffectiveStart AND COALESCE(oule.EffectiveEnd,'01-01-2050')
+JOIN OrgUnitParent oup ON oup.ParentOrgUnitId=oule.OrgUnitId
+AND @AsofDate BETWEEN oup.EffectiveStart AND COALESCE(oup.EffectiveEnd,'01-01-2050')
+AND oup.OrgUnitId=EmployeeWorkAssignment.OrgUnitId) = 'Windstream Pennsylvania, LLC' then '790955632'
+        when (SELECT TOP 1 le.ShortName FROM
+LegalEntity le
+JOIN OrgUnitLegalEntity oule ON le.LegalEntityId=oule.LegalEntityId
+AND @AsofDate BETWEEN oule.EffectiveStart AND COALESCE(oule.EffectiveEnd,'01-01-2050')
+JOIN OrgUnitParent oup ON oup.ParentOrgUnitId=oule.OrgUnitId
+AND @AsofDate BETWEEN oup.EffectiveStart AND COALESCE(oup.EffectiveEnd,'01-01-2050')
+AND oup.OrgUnitId=EmployeeWorkAssignment.OrgUnitId) = 'Windstream Services, LLC' then '11-771-0484'
+        when (SELECT TOP 1 le.ShortName FROM
+LegalEntity le
+JOIN OrgUnitLegalEntity oule ON le.LegalEntityId=oule.LegalEntityId
+AND @AsofDate BETWEEN oule.EffectiveStart AND COALESCE(oule.EffectiveEnd,'01-01-2050')
+JOIN OrgUnitParent oup ON oup.ParentOrgUnitId=oule.OrgUnitId
+AND @AsofDate BETWEEN oup.EffectiveStart AND COALESCE(oup.EffectiveEnd,'01-01-2050')
+AND oup.OrgUnitId=EmployeeWorkAssignment.OrgUnitId) = 'Windstream Western Reserve,LLC' then '007903149'
+        else 'UNIDENTIFIED'
+    end

@@ -1,0 +1,5 @@
+datediff(day,@asofdate,(CASE
+when DATEADD(YEAR,(YEAR(GETDATE())-YEAR(Employee.SeniorityDate)),Employee.SeniorityDate) > getdate()
+then DATEADD(YEAR,(YEAR(GETDATE())-YEAR(Employee.SeniorityDate)),Employee.SeniorityDate)
+else DATEADD(YEAR,(YEAR(GETDATE())+1-YEAR(Employee.SeniorityDate)),Employee.SeniorityDate)
+End))

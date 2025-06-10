@@ -1,0 +1,157 @@
+case when exists 
+(select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = employee.terminationdate
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-1)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-2)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-3)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-4)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-5)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-6)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-7)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-8)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-9)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-10)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-11)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-12)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-13)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-14)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-15)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-16)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-17)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-18)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-19)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-20)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-21)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-22)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-23)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-24)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-25)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-26)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-27)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-28)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-29)
+union
+ select em.* 
+ from employeemanager em 
+ where em.managerid = Employee.EmployeeId 
+ and em.effectiveend = (employee.terminationdate-30)
+) 
+then 'True' else 'False' end

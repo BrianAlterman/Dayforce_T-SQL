@@ -5,3 +5,23 @@ SUBSTRING(DenormEmployeeProperty1.Field40,1,7)
 -- Cut off first part of a string
 
 RIGHT(RTRIM(DenormEmployeeProperty1.Field41), LEN(DenormEmployeeProperty1.Field41) - 8)
+
+-- get the reports to breaks for a specific date (in this example tied to the term date)
+
+( select top 1 a.stringvalue from employeepropertyvalue a 
+  join employeeproperty b on b.employeepropertyid = a.employeepropertyid
+       and b.shortname like '%Reports To LVL01%'
+  where a.employeeid = Employee.EmployeeId
+       and Employee.TerminationDate between a.effectivestart and
+              coalesce(a.effectiveend,Employee.TerminationDate)
+)
+
+-- this version clips the roll up to only the name:
+
+( select top 1 RIGHT(RTRIM(a.stringvalue), LEN(a.stringvalue) - 8) from employeepropertyvalue a 
+  join employeeproperty b on b.employeepropertyid = a.employeepropertyid
+       and b.shortname like '%Reports To LVL01%'
+  where a.employeeid = Employee.EmployeeId
+       and Employee.TerminationDate between a.effectivestart and
+              coalesce(a.effectiveend,Employee.TerminationDate)
+)

@@ -1,0 +1,16 @@
+COALESCE( 
+  ( SELECT TOP 1 ContactNumber FROM PersonContact x (NOLOCK) 
+    WHERE x.PersonId = max(Employee.EmployeeId) 
+      AND x.ContactInformationTypeId = 21
+      AND x.IsUnlistedNumber = 0
+      AND @today BETWEEN x.EffectiveStart AND COALESCE(x.EffectiveEnd,@today) ) , 
+  ( SELECT TOP 1 ContactNumber FROM PersonContact x (NOLOCK) 
+    WHERE x.PersonId = max(Employee.EmployeeId) 
+      AND x.ContactInformationTypeId = 19
+      AND x.IsUnlistedNumber = 0
+      AND @today BETWEEN x.EffectiveStart AND COALESCE(x.EffectiveEnd,@today) ) , 
+)
+
+-- 19 mobile
+-- 18 home
+-- 21 work

@@ -1,0 +1,17 @@
+-- this version ties to a @asofdate seelcted by the person running the report
+(SELECT TOP 1 le.ShortName FROM
+LegalEntity le
+JOIN OrgUnitLegalEntity oule ON le.LegalEntityId=oule.LegalEntityId
+AND @AsofDate BETWEEN oule.EffectiveStart AND COALESCE(oule.EffectiveEnd,'01-01-2050')
+JOIN OrgUnitParent oup ON oup.ParentOrgUnitId=oule.OrgUnitId
+AND @AsofDate BETWEEN oup.EffectiveStart AND COALESCE(oup.EffectiveEnd,'01-01-2050')
+AND oup.OrgUnitId=EmployeeWorkAssignment.OrgUnitId)
+
+-- this version ties to the date and employee terminated (for use in termination reports)
+(SELECT TOP 1 le.ShortName FROM
+LegalEntity le
+JOIN OrgUnitLegalEntity oule ON le.LegalEntityId=oule.LegalEntityId
+AND Employee.TerminationDate BETWEEN oule.EffectiveStart AND COALESCE(oule.EffectiveEnd,'01-01-2050')
+JOIN OrgUnitParent oup ON oup.ParentOrgUnitId=oule.OrgUnitId
+AND Employee.TerminationDate BETWEEN oup.EffectiveStart AND COALESCE(oup.EffectiveEnd,'01-01-2050')
+AND oup.OrgUnitId=EmployeeWorkAssignment.OrgUnitId)

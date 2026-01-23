@@ -2,7 +2,7 @@
 
 SUBSTRING(DenormEmployeeProperty1.Field40,1,7)
 
--- Pull of the first part of the string, remove completely if it is the employee and not a leader
+-- Pull the first part of the string, remove completely if it is the employee and not a leader
 
 case
 when Employee.XRefCode = SUBSTRING(DenormEmployeeProperty1.Field45,1,7) then ''
@@ -12,6 +12,13 @@ end
 -- Cut off first part of a string
 
 RIGHT(RTRIM(DenormEmployeeProperty1.Field41), LEN(DenormEmployeeProperty1.Field41) - 8)
+
+-- Cut off first part of a string, remove name if it is the employee and not a leader
+
+case
+when Employee.XRefCode = SUBSTRING(DenormEmployeeProperty1.Field40,1,7) then ''
+else RIGHT(RTRIM(DenormEmployeeProperty1.Field40), LEN(DenormEmployeeProperty1.Field40) - 8)
+end
 
 -- get the reports to breaks for a specific date (in this example tied to the term date)
 

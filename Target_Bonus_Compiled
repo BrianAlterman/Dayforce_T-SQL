@@ -1,0 +1,5 @@
+-- produces the overide value if it exists, else the job code value
+case
+when EmployeeEmploymentStatus.TargetBonus is not null then EmployeeEmploymentStatus.TargetBonus
+else DeptJob.TargetBonus
+end

@@ -1,0 +1,45 @@
+CASE
+
+ WHEN DATEDIFF(day, (case
+
+ when Employee.SeniorityDate <= @AsOfDate then Employee.SeniorityDate
+
+ when Employee.SeniorityDate > @AsOfDate and Employee.HireDate > @AsOfDate then employee.originalHireDate
+
+ else Employee.HireDate
+
+end),@AsOfDate) < 366   THEN
+
+  'A - Less than 1 year'
+
+ WHEN DATEDIFF(day,(case
+
+ when Employee.SeniorityDate <= @AsOfDate then Employee.SeniorityDate
+
+ when Employee.SeniorityDate > @AsOfDate and Employee.HireDate > @AsOfDate then employee.originalHireDate
+
+ else Employee.HireDate
+
+end), @AsOfDate) > 365
+
+  and DATEDIFF(day,(case
+
+ when Employee.SeniorityDate <= @AsOfDate then Employee.SeniorityDate
+
+ when Employee.SeniorityDate > @AsOfDate and Employee.HireDate > @AsOfDate then employee.originalHireDate
+
+ else Employee.HireDate
+
+end),@AsOfDate) < 1826 THEN
+
+  'B - 1 to 5 years'
+
+ WHEN DATEDIFF(day, (case
+
+ when Employee.SeniorityDate <= @AsOfDate then Employee.SeniorityDate
+
+ when Employee.SeniorityDate > @AsOfDate and Employee.HireDate > @AsOfDate then employee.originalHireDate
+
+ else Employee.HireDate
+
+end),@AsOfDate) > 1825 then 'C - Greater than 5 years' else 'ERROR' end

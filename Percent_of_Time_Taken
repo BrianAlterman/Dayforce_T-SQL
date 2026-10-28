@@ -1,0 +1,37 @@
+CAST(
+       CAST(
+         100.0 *
+         CASE 
+           WHEN (COALESCE(EmployeeBalancePeriod.Value,0) 
+                 + COALESCE(SUM(EmployeeBalanceTransaction.Delta),0)
+                 + ABS(
+                     SUM(CASE 
+                           WHEN EmployeeBalanceTransaction.Delta < 0 
+                                AND EmployeeBalanceTransaction.Status = 0
+                           THEN EmployeeBalanceTransaction.Delta
+                           ELSE 0.00
+                         END)
+                   )
+                ) = 0
+           THEN 0
+           ELSE
+             (COALESCE(EmployeeBalancePeriod.Value,0) 
+              + COALESCE(SUM(EmployeeBalanceTransaction.Delta),0))
+             /
+             NULLIF(
+               COALESCE(EmployeeBalancePeriod.Value,0) 
+               + COALESCE(SUM(EmployeeBalanceTransaction.Delta),0)
+               + ABS(
+                   SUM(CASE 
+                         WHEN EmployeeBalanceTransaction.Delta < 0 
+                              AND EmployeeBalanceTransaction.Status = 0
+                         THEN EmployeeBalanceTransaction.Delta
+                         ELSE 0.00
+                       END)
+                 ),
+               0
+             )
+         END
+         AS DECIMAL(5,2)
+       ) AS VARCHAR(10)
+   ) + '%'
